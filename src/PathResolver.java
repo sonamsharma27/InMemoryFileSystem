@@ -47,9 +47,6 @@ public class PathResolver {
             return  new ResolvedParent(currentDirectory,path);
         }
         String fileName = path.substring(lastIndex+1);
-        if(fileName.endsWith("/")){
-            fileName = fileName.substring(0,(int)fileName.length());
-        }
         String pathToResolve = path.substring(0,lastIndex+1);
         FileSystemNode parent;
         if(pathToResolve.isEmpty()){

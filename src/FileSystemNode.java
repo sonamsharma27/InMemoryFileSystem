@@ -26,4 +26,11 @@ public abstract class FileSystemNode {
     public Instant getCreatedAt() {
         return createdAt;
     }
+
+    public String getPath(){
+        if(name.isEmpty()){
+            return "";
+        }
+        return parent.getPath()+ "/" + name;
+    }
 }

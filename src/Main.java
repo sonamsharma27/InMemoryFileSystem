@@ -16,6 +16,10 @@ void main() {
     fs.touch("home_sample.txt");
     fs.ls("/");
     fs.ls();
-    fs.mkdir("/home/sonam//nested");
+    fs.mkdir("/home/sonam/nested");
+    fs.cd("/home/sonam");
+    fs.pwd();
+    fs.cd("/home/insideHome");
+    fs.pwd();
     fs.ls("/home/sonam/");
 }

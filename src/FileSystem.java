@@ -4,7 +4,7 @@ public class FileSystem {
     private final PathResolver pathResolver;
 
     public FileSystem () {
-        this.root = new Directory("");;
+        this.root = new Directory("");
         currentDirectory= root;
         pathResolver = new PathResolver();
     }
@@ -50,6 +50,7 @@ public class FileSystem {
     void ls(){
         ls("./");
     }
+
     void ls(String path){
         try{
             FileSystemNode node = pathResolver.resolvePath(path,root,currentDirectory);
@@ -64,5 +65,10 @@ public class FileSystem {
         } catch (IllegalArgumentException e){
             System.out.println(e.getMessage());
         }
+    }
+
+    void pwd(){
+        String path =  currentDirectory.getPath();
+        System.out.println(path);
     }
 }
