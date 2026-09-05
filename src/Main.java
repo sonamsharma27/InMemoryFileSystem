@@ -22,4 +22,8 @@ void main() {
     fs.cd("/home/insideHome");
     fs.pwd();
     fs.ls("/home/sonam/");
+    fs.rm("/home/sonam/nested");
+    fs.ls("/");
+    fs.ls("/home");
+    fs.ls("/");
 }

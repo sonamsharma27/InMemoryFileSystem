@@ -71,4 +71,17 @@ public class FileSystem {
         String path =  currentDirectory.getPath();
         System.out.println(path);
     }
+
+    void rm(String path){
+        try{
+            ResolvedParent resolvedParent = pathResolver.resolveParent(path,root,currentDirectory);
+            Directory parent  = resolvedParent.getParent();
+            String nodeTobeRemoved = resolvedParent.getFileName();
+            parent.removeChild(nodeTobeRemoved);
+        }catch (IllegalArgumentException e){
+            System.out.println(e.getMessage());
+        }
+
+
+    }
 }
